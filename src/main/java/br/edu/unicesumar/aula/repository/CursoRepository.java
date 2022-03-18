@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.P
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import antlr.collections.List;
+
 import br.edu.unicesumar.aula.domain.Curso;
 
 public interface CursoRepository extends JpaRepository <Curso, Long> {
