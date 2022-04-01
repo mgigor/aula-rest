@@ -1,5 +1,7 @@
 package br.edu.unicesumar.aula.controller;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -45,8 +47,9 @@ public class CatalogoFilmeController {
     }
 
     @PostMapping
-    public ResponseEntity<CatalogoFilme> criarNovoCatalogoFilme(@Valid @RequestBody CatalogoFilme catalogoFilme) {
-        return ResponseEntity.ok(this.catalogoFilmeService.salvar(catalogoFilme));
+    public ResponseEntity<CatalogoFilme> criarNovoCatalogoFilme(@Valid @RequestBody CatalogoFilme catalogoFilme) throws URISyntaxException {
+        CatalogoFilme catalogoFilmeCriado = this.catalogoFilmeService.salvar(catalogoFilme);
+        return ResponseEntity.created(new URI("/catalogo-filme/"+catalogoFilmeCriado.getId())).body(catalogoFilmeCriado);
     }
 
     @PutMapping("/{id}")
@@ -64,9 +67,8 @@ public class CatalogoFilmeController {
         } else {
             return ResponseEntity.notFound().build();
         }
-
     }
-
+    
     @DeleteMapping
     public ResponseEntity<Void> excluirTodos() {
         this.catalogoFilmeService.excluirTodos();

@@ -38,10 +38,6 @@ public class CatalogoFilme {
     private LocalDate lancamento;
     
     @NotBlank
-    @Size(min = 10)
-    @CPF
-    @CNPJ
-    @Pattern(regexp ="")
     private String bannerUrl;
 
 }
