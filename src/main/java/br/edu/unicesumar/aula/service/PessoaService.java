@@ -33,9 +33,9 @@ public class PessoaService {
 
 		if(pessoaDoBancoDeDadosOpt.isPresent()) {
 			Pessoa pessoaDoBancoDeDados = pessoaDoBancoDeDadosOpt.get();
-			pessoaDoBancoDeDados.setCpf(pessoa.getCpf());
-			pessoaDoBancoDeDados.setIdade(pessoa.getIdade());
-			pessoaDoBancoDeDados.setNome(pessoa.getNome());
+			// pessoaDoBancoDeDados.setCpf(pessoa.getCpf());
+			// pessoaDoBancoDeDados.setIdade(pessoa.getIdade());
+			// pessoaDoBancoDeDados.setNome(pessoa.getNome());
 			return this.save(pessoaDoBancoDeDados);
 		}
 		

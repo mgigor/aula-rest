@@ -32,10 +32,10 @@ public class CatalogoFilmeService {
     }
 
     public Optional<CatalogoFilme> atualizar(CatalogoFilme catalogoFilmeExistente) {
-        if(catalogoFilmeRepository.existsById(catalogoFilmeExistente.getId())) {
-            CatalogoFilme catalogoFilmeAtualizado = this.catalogoFilmeRepository.save(catalogoFilmeExistente);
-            return Optional.of(catalogoFilmeAtualizado);
-        }
+        // if(catalogoFilmeRepository.existsById(catalogoFilmeExistente.getId())) {
+        //     CatalogoFilme catalogoFilmeAtualizado = this.catalogoFilmeRepository.save(catalogoFilmeExistente);
+        //     return Optional.of(catalogoFilmeAtualizado);
+        // }
         return Optional.empty();
     }
 
