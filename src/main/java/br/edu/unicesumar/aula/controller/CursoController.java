@@ -52,6 +52,11 @@ public class CursoController {
         cursoBancoDeDados.setNome(curso.getNome());
         cursoBancoDeDados.setDataInicio(curso.getDataInicio());
 
+        cursoBancoDeDados.setProfessor(curso.getProfessor());
+
+        cursoBancoDeDados.getAulas().clear();
+        cursoBancoDeDados.getAulas().addAll(curso.getAulas());
+
         return this.cursoRepository.save(cursoBancoDeDados);
     }
 

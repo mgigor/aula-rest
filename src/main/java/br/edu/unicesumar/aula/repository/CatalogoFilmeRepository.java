@@ -6,4 +6,6 @@ import br.edu.unicesumar.aula.domain.CatalogoFilme;
 
 public interface CatalogoFilmeRepository extends JpaRepository<CatalogoFilme, Long> {
     
+    boolean existsByNome(String nome);
+
 }
